@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-type TConfigResponse = {
+type EnvConfig = {
     port: string;
     open_ai_model: string;
     open_api_key: string;
@@ -17,7 +17,7 @@ const getEnvVar = (
     return value;
 };
 
-export const envConfig = (): TConfigResponse => {
+export const envConfig = (): EnvConfig => {
 
     const PORT = getEnvVar("PORT", false) ?? "3001";
     const OPEN_AI_MODEL = getEnvVar("OPEN_AI_MODEL");
